@@ -53,7 +53,7 @@ export declare type Options = {
  * @param options - Options for the function.
  * @returns An array of similar words.
  */
-export declare function findSimilar(word: string, candidates: string[], options?: Options): string[];
+export declare function findSimilar(word: string, candidates: readonly string[] | string[], options?: Options): string[];
 /**
  * Suggests similar words in a list of words.
  *
@@ -62,4 +62,4 @@ export declare function findSimilar(word: string, candidates: string[], options?
  * @param options - Options for the function.
  * @returns A string of suggested words.
  */
-export declare function didYouMean(word: string, candidates: string[], options?: Options): string;
+export declare function didYouMean(word: string, candidates: readonly string[] | string[], options?: Options): string;

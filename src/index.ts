@@ -61,7 +61,7 @@ export type Options = {
  */
 export function findSimilar(
   word: string,
-  candidates: string[],
+  candidates: readonly string[] | string[],
   options: Options = {}
 ) {
   let { maxScore = 3 } = options
@@ -96,7 +96,7 @@ export function findSimilar(
  */
 export function didYouMean(
   word: string,
-  candidates: string[],
+  candidates: readonly string[] | string[],
   options: Options = {}
 ) {
   const matches = findSimilar(word, candidates, options)
