@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/bent10/find-similar/compare/v1.1.0...v1.2.0) (2022-05-05)
+
+
+### Features
+
+* use `doogu` ([735440a](https://github.com/bent10/find-similar/commit/735440a67ca95da3f6f53e9fcfcda98bcf9a490b))
+
 # [1.1.0](https://github.com/bent10/find-similar/compare/v1.0.0...v1.1.0) (2022-04-29)
 
 
