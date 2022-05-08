@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/bent10/find-similar/compare/v1.2.0...v1.2.1) (2022-05-08)
+
+
+### Bug Fixes
+
+* bump doogu ([099b639](https://github.com/bent10/find-similar/commit/099b639067415aebe028d8b79c7f9a41e37a1ea8))
+
 # [1.2.0](https://github.com/bent10/find-similar/compare/v1.1.0...v1.2.0) (2022-05-05)
 
 
