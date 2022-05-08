@@ -1,1 +1,34 @@
-import l from"leven";function m(e,o,i={}){let{maxScore:t=3}=i,{criteria:n=.5,prefix:g=""}=i,s=[];for(let a of o){let c=Math.max(e.length,a.length),r=l(e,a);(c-r)/c>=n&&r<=t&&(r<t&&(t=r,s.length=0),s.push(g+a))}return s}function p(e,o,i={}){let t=m(e,o,i),n="Did you mean ";return t.length>0?(t.length>1&&(n+="one of "),n+=`"${t.join(", ")}"?`,n):""}export{p as didYouMean,m as findSimilar};
+// src/index.ts
+import leven from "leven";
+function findSimilar(word, candidates, options = {}) {
+  let { maxScore = 3 } = options;
+  const { criteria = 0.5, prefix = "" } = options;
+  const matches = [];
+  for (const candidate of candidates) {
+    const length = Math.max(word.length, candidate.length);
+    const score = leven(word, candidate);
+    const similarity = (length - score) / length;
+    if (similarity >= criteria && score <= maxScore) {
+      if (score < maxScore) {
+        maxScore = score;
+        matches.length = 0;
+      }
+      matches.push(prefix + candidate);
+    }
+  }
+  return matches;
+}
+function didYouMean(word, candidates, options = {}) {
+  const matches = findSimilar(word, candidates, options);
+  let message = "Did you mean ";
+  if (matches.length > 0) {
+    matches.length > 1 && (message += "one of ");
+    message += `"${matches.join(", ")}"?`;
+    return message;
+  }
+  return "";
+}
+export {
+  didYouMean,
+  findSimilar
+};
