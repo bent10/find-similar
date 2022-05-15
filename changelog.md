@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/bent10/find-similar/compare/v1.2.1...v1.2.2) (2022-05-15)
+
+
+### Bug Fixes
+
+* **release:** git rm dist ([5d40610](https://github.com/bent10/find-similar/commit/5d406102e370eb76066cb2f5d8177ba9ef0d8e6f))
+
 ## [1.2.1](https://github.com/bent10/find-similar/compare/v1.2.0...v1.2.1) (2022-05-08)
 
 
