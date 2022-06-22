@@ -27,7 +27,7 @@
     "matching"
   ],
   "engines": {
-    "node": ">=12"
+    "node": ">=v12.22.12"
   },
   "type": "module",
   "main": "dist/index.js",
