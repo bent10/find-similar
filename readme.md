@@ -34,11 +34,11 @@ Finds similar word(s) in a list of words.
 
 #### Parameters
 
-| Name         | Type     | Description                           |
-| :----------- | :------- | :------------------------------------ |
-| `word`       | string   | The word to find similar words for.   |
-| `candidates` | string[] | An array of words to compare against. |
-| `options`    | Options  | Options for the function.             |
+| Name         | Type                          | Description                           |
+| :----------- | :---------------------------- | :------------------------------------ |
+| `word`       | string                        | The word to find similar words for.   |
+| `candidates` | string[]                      | An array of words to compare against. |
+| `options`    | [Options](#interface-options) | Options for the function.             |
 
 #### Returns
 
@@ -54,13 +54,21 @@ An array of similar words.
 
 Suggests similar words in a list of words.
 
+```js
+const suggetion = didYouMean('foos', ['bar', 'baz', 'foo'], {
+  prefix: '--'
+})
+console.log(suggetion)
+// => 'Did you mean "--foo"?'
+```
+
 #### Parameters
 
-| Name         | Type     | Description                           |
-| :----------- | :------- | :------------------------------------ |
-| `word`       | string   | The word to find similar words for.   |
-| `candidates` | string[] | An array of words to compare against. |
-| `options`    | Options  | Options for the function.             |
+| Name         | Type                          | Description                           |
+| :----------- | :---------------------------- | :------------------------------------ |
+| `word`       | string                        | The word to find similar words for.   |
+| `candidates` | string[]                      | An array of words to compare against. |
+| `options`    | [Options](#interface-options) | Options for the function.             |
 
 #### Returns
 
@@ -68,19 +76,27 @@ string
 
 A string of suggested words.
 
-## Type aliases
+---
 
-### Options
+### Interface: Options
 
-Ƭ **Options**: `Object`
+#### maxScore
 
-#### Type declaration
+• `Optional` **maxScore**: `number`
 
-| Name        | Type   | Description                                                           |
-| :---------- | :----- | :-------------------------------------------------------------------- |
-| `maxScore?` | number | Maximum levenshtein distance threshold. **`default`** 3               |
-| `criteria?` | number | The similarity threshold, a number between 0 and 1. **`default`** 0.5 |
-| `prefix?`   | string | A string to prepend to the suggested word. **`default`** ''           |
+Maximum levenshtein distance threshold. **`default`** 3
+
+#### criteria
+
+• `Optional` **criteria**: `number`
+
+The similarity threshold, a number between 0 and 1. **`default`** 0.5
+
+#### prefix
+
+• `Optional` **prefix**: `string`
+
+A string to prepend to the suggested word. **`default`** ''
 
 ## Contributing
 

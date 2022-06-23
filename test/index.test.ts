@@ -1,5 +1,5 @@
 import test from 'ava'
-import { findSimilar, didYouMean } from '../src/index.js'
+import { findSimilar, didYouMean } from '../dist/index.js'
 
 test('singgle suggestions', t => {
   const suggestions = didYouMean('foos', ['bar', 'baz', 'foo'])
