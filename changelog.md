@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/bent10/find-similar/compare/v1.2.2...v1.2.3) (2022-06-23)
+
+
+### Bug Fixes
+
+* build files and workflows ([176a702](https://github.com/bent10/find-similar/commit/176a7023da14f1b91f99c8da60db136b0836bad7))
+
 ## [1.2.2](https://github.com/bent10/find-similar/compare/v1.2.1...v1.2.2) (2022-05-15)
 
 
