@@ -19,8 +19,8 @@ jobs:
       matrix:
         node-version:
           - 16
-          - 14.14
-          - 12.20
+          - 14.17
+          - 12.22
         os:
           - ubuntu-latest
           - windows-latest

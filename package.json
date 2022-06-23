@@ -27,7 +27,7 @@
     "matching"
   ],
   "engines": {
-    "node": "^12.20 || ^14.14 || >=16"
+    "node": "^12.22 || ^14.17 || >=16"
   },
   "type": "module",
   "exports": "./dist/index.js",
