@@ -1,24 +1,23 @@
-import test from 'ava'
 import { findSimilar, didYouMean } from '../dist/index.js'
 
-test('singgle suggestions', t => {
+test('singgle suggestions', () => {
   const suggestions = didYouMean('foos', ['bar', 'baz', 'foo'])
-  t.is(suggestions, 'Did you mean "foo"?')
+  expect(suggestions).toBe('Did you mean "foo"?')
 })
 
-test('multiple suggestions', t => {
+test('multiple suggestions', () => {
   const suggestions = didYouMean('foos', ['bar', 'baz', 'foo', 'fool'])
-  t.is(suggestions, 'Did you mean one of "foo, fool"?')
+  expect(suggestions).toBe('Did you mean one of "foo, fool"?')
 })
 
-test('no suggestions', t => {
+test('no suggestions', () => {
   const suggestions = didYouMean('xoo', ['bar', 'baz', 'foo', 'fool'], {
     criteria: 1
   })
-  t.is(suggestions, '')
+  expect(suggestions).toBe('')
 })
 
-test('maxScore', t => {
+test('maxScore', () => {
   const exac = findSimilar('foo', ['bar', 'baz', 'foo', 'fool'], {
     maxScore: 0
   })
@@ -26,11 +25,11 @@ test('maxScore', t => {
     maxScore: 0
   })
 
-  t.is(String(exac), 'foo')
-  t.is(String(similar), '')
+  expect(String(exac)).toBe('foo')
+  expect(String(similar)).toBe('')
 })
 
-test('criteria', t => {
+test('criteria', () => {
   const exac = findSimilar('foo', ['bar', 'baz', 'foo', 'fool'], {
     criteria: 1
   })
@@ -38,13 +37,13 @@ test('criteria', t => {
     criteria: 1
   })
 
-  t.is(String(exac), 'foo')
-  t.is(String(similar), '')
+  expect(String(exac)).toBe('foo')
+  expect(String(similar)).toBe('')
 })
 
-test('prefix', t => {
+test('prefix', () => {
   const similar = findSimilar('foos', ['bar', 'baz', 'foo', 'fool'], {
     prefix: '--'
   })
-  t.is(String(similar), '--foo,--fool')
+  expect(String(similar)).toBe('--foo,--fool')
 })

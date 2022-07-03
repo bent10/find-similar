@@ -27,7 +27,7 @@
     "matching"
   ],
   "engines": {
-    "node": "^12.22 || ^14.17 || >=16"
+    "node": "^12.22 || ^14.17 || >=16.10.0"
   },
   "type": "module",
   "exports": "./dist/index.js",
@@ -42,14 +42,14 @@
     "watch": "chokidar \"src/*.ts\" -c \"npm run build\"",
     "lint": "tsc --noEmit && eslint \"./src\" --ext \".ts\" --cache --cache-location \"node_modules/.cache/.eslintcache\"",
     "build": "swc \"./src\" -d \"dist\" && tsc -d --emitDeclarationOnly",
-    "test": "ava --verbose",
-    "coverage": "c8 -r lcov -r text npm test"
+    "test": "node --experimental-vm-modules --no-warnings ./node_modules/jest/bin/jest.js --verbose",
+    "coverage": "npm test -- --coverage"
   },
   "dependencies": {
     "leven": "^4.0.0"
   },
   "devDependencies": {
-    "doogu": "^2.2.9"
+    "doogu": "^2.3.2"
   },
   "config": {
     "commitizen": {
@@ -60,20 +60,17 @@
     "extends": "./node_modules/doogu/config/eslint.json"
   },
   "prettier": "doogu/config/prettier.json",
-  "ava": {
-    "files": [
-      "test/**/*.test.ts"
-    ],
-    "extensions": {
-      "ts": "module"
+  "jest": {
+    "transform": {
+      "^.*.ts$": [
+        "@swc/jest"
+      ]
     },
-    "nodeArguments": [
-      "--loader=ts-node/esm",
-      "--no-warnings"
+    "extensionsToTreatAsEsm": [
+      ".ts"
     ],
-    "ignoredByWatcher": [
-      "{coverage,dist}/**"
-    ]
+    "clearMocks": true,
+    "coverageDirectory": "coverage"
   },
   "release": {
     "branches": [
