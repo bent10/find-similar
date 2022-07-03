@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/bent10/find-similar/compare/v1.2.3...v1.2.4) (2022-07-03)
+
+
+### Bug Fixes
+
+* omit engine field ([972fd07](https://github.com/bent10/find-similar/commit/972fd076343426ad95036c2b2662b789f2947030))
+
 ## [1.2.3](https://github.com/bent10/find-similar/compare/v1.2.2...v1.2.3) (2022-06-23)
 
 
