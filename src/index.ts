@@ -63,7 +63,7 @@ export function findSimilar(
   word: string,
   candidates: readonly string[] | string[],
   options: Options = {}
-) {
+): string[] {
   if (typeof word !== 'string') {
     throw new TypeError('Expected word to be a string')
   }
@@ -106,7 +106,7 @@ export function didYouMean(
   word: string,
   candidates: readonly string[] | string[],
   options: Options = {}
-) {
+): string {
   const matches = findSimilar(word, candidates, options)
   let message = 'Did you mean '
 
