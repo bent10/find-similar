@@ -10,8 +10,7 @@ npm i find-similar
 
 ## Usage
 
-This package is pure ESM, please read the
-[esm-package](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c).
+This package is pure ESM, please read the [esm-package](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c).
 
 ```js
 import { findSimilar, didYouMean } from 'find-similar'
@@ -24,79 +23,39 @@ console.log(didYouMean('foos', ['bar', 'baz', 'foo']))
 // => 'Did you mean "foo"?'
 ```
 
-## API
+## API Reference
 
-### findSimilar
-
-▸ **findSimilar**(`word`, `candidates`, `options?`): string[]
+### `findSimilar(word: string, candidates: readonly string[] | string[], options?: Options): string[]`
 
 Finds similar word(s) in a list of words.
 
-#### Parameters
+- `word`: The word to find similar words for.
+- `candidates`: An array of words to compare against.
+- `options`: Options for the function (optional).
+  - `maxScore`: Maximum levenshtein distance threshold. (default: 3)
+  - `criteria`: The similarity threshold, a number between 0 and 1. (default: 0.5)
+  - `prefix`: A string to prepend to the suggested word. (default: '')
 
-| Name         | Type                          | Description                           |
-| :----------- | :---------------------------- | :------------------------------------ |
-| `word`       | string                        | The word to find similar words for.   |
-| `candidates` | string[]                      | An array of words to compare against. |
-| `options`    | [Options](#interface-options) | Options for the function.             |
+Returns an array of similar words.
 
-#### Returns
-
-string[]
-
-An array of similar words.
-
----
-
-### didYouMean
-
-▸ **didYouMean**(`word`, `candidates`, `options?`): string
+### `didYouMean(word: string, candidates: readonly string[] | string[], options?: Options): string`
 
 Suggests similar words in a list of words.
 
-```js
-const suggetion = didYouMean('foos', ['bar', 'baz', 'foo'], {
-  prefix: '--'
-})
-console.log(suggetion)
-// => 'Did you mean "--foo"?'
-```
+- `word`: The word to find similar words for.
+- `candidates`: An array of words to compare against.
+- `options`: Options for the function (optional).
+  - `maxScore`: Maximum levenshtein distance threshold. (default: 3)
+  - `criteria`: The similarity threshold, a number between 0 and 1. (default: 0.5)
+  - `prefix`: A string to prepend to the suggested word. (default: '')
 
-#### Parameters
+Returns a string of suggested words or an empty string if no matches are found.
 
-| Name         | Type                          | Description                           |
-| :----------- | :---------------------------- | :------------------------------------ |
-| `word`       | string                        | The word to find similar words for.   |
-| `candidates` | string[]                      | An array of words to compare against. |
-| `options`    | [Options](#interface-options) | Options for the function.             |
+## Options
 
-#### Returns
-
-string
-
-A string of suggested words.
-
----
-
-### Interface: Options
-
-#### maxScore
-
-• `Optional` **maxScore**: `number`
-
-Maximum levenshtein distance threshold. **`default`** 3
-
-#### criteria
-
-• `Optional` **criteria**: `number`
-
-The similarity threshold, a number between 0 and 1. **`default`** 0.5
-
-#### prefix
-
-• `Optional` **prefix**: `string`
-
-A string to prepend to the suggested word. **`default`** ''
+- `maxScore`: Maximum levenshtein distance threshold. (default: 3)
+- `criteria`: The similarity threshold, a number between 0 and 1. (default: 0.5)
+- `prefix`: A string to prepend to the suggested word. (default: '')
 
 ## Contributing
 
@@ -114,6 +73,8 @@ Now you can use `git cz` or just `cz` instead of `git commit` when committing. Y
 git add . && git cz
 ```
 
-## Thank you
+## License
 
-A project by [Stilearning](https://stilearning.com) &copy; 2022.
+![GitHub](https://img.shields.io/github/license/bent10/find-similar)
+
+A project by [Stilearning](https://stilearning.com) &copy; 2022-2023.

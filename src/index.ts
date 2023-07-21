@@ -64,11 +64,19 @@ export function findSimilar(
   candidates: readonly string[] | string[],
   options: Options = {}
 ) {
+  if (typeof word !== 'string') {
+    throw new TypeError('Expected word to be a string')
+  }
+
   let { maxScore = 3 } = options
   const { criteria = 0.5, prefix = '' } = options
 
   const matches = []
   for (const candidate of candidates) {
+    if (typeof candidate !== 'string') {
+      throw new TypeError('Candidates must be strings')
+    }
+
     const length = Math.max(word.length, candidate.length)
     const score = leven(word, candidate)
     const similarity = (length - score) / length
