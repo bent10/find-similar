@@ -19,8 +19,6 @@ jobs:
       matrix:
         node-version:
           - 16.10.0
-          - 14.17
-          - 12.22
         os:
           - ubuntu-latest
           - windows-latest
@@ -31,5 +29,4 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm run lint
-      - run: npm run build
       - run: npm test
