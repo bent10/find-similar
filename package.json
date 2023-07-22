@@ -48,7 +48,7 @@
     "leven": "^4.0.0"
   },
   "devDependencies": {
-    "doogu": "^3.2.1"
+    "doogu": "^3.2.2"
   },
   "config": {
     "commitizen": {
