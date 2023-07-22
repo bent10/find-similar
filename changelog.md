@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/bent10/find-similar/compare/v1.2.4...v1.2.5) (2023-07-22)
+
+
+### Bug Fixes
+
+* `@typescript-eslint/no-explicit-any` ([7f64933](https://github.com/bent10/find-similar/commit/7f64933a2e51e0bfb2ec65153e2345ac41ff3f1e))
+
 ## [1.2.4](https://github.com/bent10/find-similar/compare/v1.2.3...v1.2.4) (2022-07-03)
 
 
