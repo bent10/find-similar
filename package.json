@@ -40,7 +40,7 @@
     "build": "vite build && npm run types",
     "test": "vitest --ui",
     "coverage": "vitest run --coverage",
-    "types": "tsc src/*.ts -d --emitDeclarationOnly --outDir ./dist && resolve-tspaths -o ./dist",
+    "types": "tsc src/*.ts -d --emitDeclarationOnly --outDir ./dist",
     "lint": "tsc --noEmit && eslint .",
     "format": "prettier --write ."
   },
@@ -48,7 +48,7 @@
     "leven": "^4.0.0"
   },
   "devDependencies": {
-    "doogu": "3.2.8"
+    "doogu": "3.2.10"
   },
   "config": {
     "commitizen": {
