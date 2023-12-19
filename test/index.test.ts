@@ -1,3 +1,5 @@
+/// <reference types="vitest/globals" />
+
 import { findSimilar, didYouMean } from '../src/index.js'
 
 test('findSimilar', () => {
