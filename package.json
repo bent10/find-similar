@@ -38,7 +38,7 @@
     "start": "npm run dev",
     "dev": "npm run types && vite build --emptyOutDir=false --watch",
     "build": "vite build && npm run types",
-    "test": "vitest --ui",
+    "test": "vitest",
     "coverage": "vitest run --coverage",
     "types": "tsc src/*.ts -d --emitDeclarationOnly --outDir ./dist",
     "lint": "tsc --noEmit && eslint .",
@@ -48,7 +48,7 @@
     "leven": "^4.0.0"
   },
   "devDependencies": {
-    "doogu": "3.2.10"
+    "doogu": "3.2.11"
   },
   "config": {
     "commitizen": {
