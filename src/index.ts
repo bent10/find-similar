@@ -111,7 +111,7 @@ export function didYouMean(
   let message = 'Did you mean '
 
   if (matches.length > 0) {
-    matches.length > 1 && (message += 'one of ')
+    message += matches.length > 1 ? 'one of ' : ''
     message += `"${matches.join(', ')}"?`
 
     return message
