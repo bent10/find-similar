@@ -1,3 +1,10 @@
+## [1.2.6](https://github.com/bent10/find-similar/compare/v1.2.5...v1.2.6) (2024-08-28)
+
+
+### Bug Fixes
+
+* **deps:** update `doogu` to `v4.0.4` ([b7b7688](https://github.com/bent10/find-similar/commit/b7b768822356888b4c8d900527d1e85c3f2a85a1))
+
 ## [1.2.5](https://github.com/bent10/find-similar/compare/v1.2.4...v1.2.5) (2023-07-22)
 
 
